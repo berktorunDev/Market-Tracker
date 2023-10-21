@@ -1,4 +1,4 @@
-package com.boilerplate.project.service;
+package com.market.tracker.service;
 
 import org.springframework.stereotype.Service;
 

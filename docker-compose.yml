@@ -6,6 +6,6 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_DB: app_name
+      POSTGRES_DB: market_tracker
       POSTGRES_USER: username
       POSTGRES_PASSWORD: password

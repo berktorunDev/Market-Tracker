@@ -1,57 +1,33 @@
-package com.boilerplate.project.model;
+package com.market.tracker.dto;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
-import javax.validation.constraints.Email;
-
-import org.hibernate.annotations.GenericGenerator;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "users")
-public class User {
-    @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
-    private UUID id;
-
+public class UserDTO {
+    private Long id;
     private String username;
-
-    @Email
     private String email;
-
-    private String password;
-
     private LocalDateTime createdAt;
-
     private LocalDateTime updatedAt;
+    private boolean isVerified;
 
-    private boolean isVerified = Boolean.FALSE;
-
-    public User() {
+    public UserDTO() {
     }
 
-    public User(UUID id, String username, @Email String email, String password, LocalDateTime createdAt,
+    public UserDTO(Long id, String username, String email, LocalDateTime createdAt,
             LocalDateTime updatedAt, boolean isVerified) {
         this.id = id;
         this.username = username;
         this.email = email;
-        this.password = password;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.isVerified = isVerified;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -69,14 +45,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -102,5 +70,4 @@ public class User {
     public void setVerified(boolean isVerified) {
         this.isVerified = isVerified;
     }
-
 }

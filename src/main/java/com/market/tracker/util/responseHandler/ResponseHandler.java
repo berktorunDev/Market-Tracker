@@ -1,4 +1,4 @@
-package com.boilerplate.project.util;
+package com.market.tracker.util.responseHandler;
 
 import java.util.HashMap;
 import java.util.Map;
