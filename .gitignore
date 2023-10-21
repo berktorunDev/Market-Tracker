@@ -1,0 +1,63 @@
+# Maven
+/target/
+*.iml
+
+# Gradle
+/build/
+.gradle/
+out/
+
+# Spring Boot
+#/application*.yml
+#/application*.properties
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+*.code-workspace-*.json
+
+# Logs
+logs/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# NetBeans
+/nb-configuration.xml
+
+# Visual Studio Code
+.vscode/
+
+# Intellij
+.idea/
+*.iws
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+out/
+
+# Compiled Java class files
+*.class
+
+# Compiled bytecode
+*.jar
+
+# Compiled native libraries
+*.so
+*.dll
+
+# Compiled Executables
+*.exe
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Log files
+*.log
