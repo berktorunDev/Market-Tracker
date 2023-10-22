@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.market.tracker.model.Crypto;
+import com.market.tracker.dto.CryptoDTO;
 import com.market.tracker.service.CryptoService;
 import com.market.tracker.util.responseHandler.ResponseHandler;
 
@@ -31,13 +31,13 @@ public class CryptoController {
             @RequestParam(name = "page", defaultValue = "0") int page,
             @RequestParam(name = "size", defaultValue = "20") int size) {
         PageRequest pageRequest = PageRequest.of(page, size);
-        Page<Crypto> cryptos = cryptoService.getAllCryptos(pageRequest);
+        Page<CryptoDTO> cryptos = cryptoService.getAllCryptos(pageRequest);
         return ResponseHandler.successResponse(HttpStatus.OK, "Cryptos retrieved successfully", cryptos);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Object> getCryptoById(@PathVariable Long id) {
-        Optional<Crypto> crypto = cryptoService.getCryptoById(id);
+        Optional<CryptoDTO> crypto = cryptoService.getCryptoById(id);
         if (crypto.isPresent()) {
             return ResponseHandler.successResponse(HttpStatus.OK, "Crypto retrieved successfully", crypto.get());
         } else {

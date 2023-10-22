@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.market.tracker.model.Stock;
+import com.market.tracker.dto.StockDTO;
 import com.market.tracker.service.StockService;
 import com.market.tracker.util.responseHandler.ResponseHandler;
 
@@ -31,13 +31,13 @@ public class StockController {
             @RequestParam(name = "page", defaultValue = "0") int page,
             @RequestParam(name = "size", defaultValue = "20") int size) {
         PageRequest pageRequest = PageRequest.of(page, size);
-        Page<Stock> stocksPage = stockService.getAllStocks(pageRequest);
+        Page<StockDTO> stocksPage = stockService.getAllStocks(pageRequest);
         return ResponseHandler.successResponse(HttpStatus.OK, "Stocks retrieved successfully", stocksPage);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Object> getStockById(@PathVariable Long id) {
-        Optional<Stock> stock = stockService.getStockById(id);
+        Optional<StockDTO> stock = stockService.getStockById(id);
         if (stock.isPresent()) {
             return ResponseHandler.successResponse(HttpStatus.OK, "Stock retrieved successfully", stock.get());
         } else {
