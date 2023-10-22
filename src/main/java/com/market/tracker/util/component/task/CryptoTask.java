@@ -6,18 +6,28 @@ import org.springframework.stereotype.Component;
 
 import com.market.tracker.model.Crypto;
 import com.market.tracker.service.CryptoAPIService;
+import com.market.tracker.service.CryptoService;
 
 @Component
 public class CryptoTask {
 
+    // Inject the required services
+    private final CryptoService cryptoService;
     private final CryptoAPIService cryptoAPIService;
 
-    public CryptoTask(CryptoAPIService cryptoAPIService) {
+    // Constructor to inject the necessary dependencies
+    public CryptoTask(CryptoService cryptoService, CryptoAPIService cryptoAPIService) {
+        this.cryptoService = cryptoService;
         this.cryptoAPIService = cryptoAPIService;
     }
 
+    // Method to update cryptocurrency data
     public void updateCryptos() {
+        // Fetch a list of cryptocurrency data from an external API using the
+        // CryptoAPIService
         List<Crypto> cryptos = cryptoAPIService.fetchCryptos();
-        cryptoAPIService.saveCryptos(cryptos);
+
+        // Save the fetched cryptocurrency data to the database using the CryptoService
+        cryptoService.saveCryptos(cryptos);
     }
 }

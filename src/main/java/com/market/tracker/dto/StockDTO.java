@@ -1,14 +1,6 @@
-package com.market.tracker.model;
+package com.market.tracker.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
-public class Stock {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class StockDTO {
     private Long id;
 
     private String symbol;
