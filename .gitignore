@@ -8,8 +8,8 @@
 out/
 
 # Spring Boot
-#/application*.yml
-#/application*.properties
+application*.yml
+application*.properties
 
 # IDE
 .idea/
