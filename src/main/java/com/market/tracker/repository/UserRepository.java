@@ -6,4 +6,12 @@ import com.market.tracker.model.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
+    User findByUsernameOrEmail(String username, String Email);
+
+    User findByEmail(String email);
+
+    User findByResetToken(String resetToken);
+
+    User findByVerificationCode(String verificationCode);
+
 }

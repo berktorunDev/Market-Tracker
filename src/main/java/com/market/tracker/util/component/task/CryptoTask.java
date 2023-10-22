@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.market.tracker.model.Crypto;
-import com.market.tracker.service.CryptoAPIService;
 import com.market.tracker.service.CryptoService;
+import com.market.tracker.util.service.CryptoAPIService;
 
 @Component
 public class CryptoTask {

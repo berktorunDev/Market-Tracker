@@ -4,23 +4,51 @@ import java.time.LocalDateTime;
 
 public class UserDTO {
     private Long id;
+
     private String username;
+
     private String email;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+
     private boolean isVerified;
+
+    private boolean isActive;
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
+
+    private LocalDateTime lastLogin;
+
+    private LocalDateTime lastLogout;
+
+    private String resetToken;
+
+    private LocalDateTime resetTokenExpiry;
+
+    private String verificationCode;
+
+    private LocalDateTime verificationCodeExpiry;
 
     public UserDTO() {
     }
 
-    public UserDTO(Long id, String username, String email, LocalDateTime createdAt,
-            LocalDateTime updatedAt, boolean isVerified) {
+    public UserDTO(Long id, String username, String email, boolean isVerified, boolean isActive,
+            LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime lastLogin, LocalDateTime lastLogout,
+            String resetToken, LocalDateTime resetTokenExpiry, String verificationCode,
+            LocalDateTime verificationCodeExpiry) {
         this.id = id;
         this.username = username;
         this.email = email;
+        this.isVerified = isVerified;
+        this.isActive = isActive;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.isVerified = isVerified;
+        this.lastLogin = lastLogin;
+        this.lastLogout = lastLogout;
+        this.resetToken = resetToken;
+        this.resetTokenExpiry = resetTokenExpiry;
+        this.verificationCode = verificationCode;
+        this.verificationCodeExpiry = verificationCodeExpiry;
     }
 
     public Long getId() {
@@ -47,6 +75,22 @@ public class UserDTO {
         this.email = email;
     }
 
+    public boolean isVerified() {
+        return isVerified;
+    }
+
+    public void setVerified(boolean isVerified) {
+        this.isVerified = isVerified;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean isActive) {
+        this.isActive = isActive;
+    }
+
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -63,11 +107,52 @@ public class UserDTO {
         this.updatedAt = updatedAt;
     }
 
-    public boolean isVerified() {
-        return isVerified;
+    public LocalDateTime getLastLogin() {
+        return lastLogin;
     }
 
-    public void setVerified(boolean isVerified) {
-        this.isVerified = isVerified;
+    public void setLastLogin(LocalDateTime lastLogin) {
+        this.lastLogin = lastLogin;
     }
+
+    public LocalDateTime getLastLogout() {
+        return lastLogout;
+    }
+
+    public void setLastLogout(LocalDateTime lastLogout) {
+        this.lastLogout = lastLogout;
+    }
+
+    public String getResetToken() {
+        return resetToken;
+    }
+
+    public void setResetToken(String resetToken) {
+        this.resetToken = resetToken;
+    }
+
+    public LocalDateTime getResetTokenExpiry() {
+        return resetTokenExpiry;
+    }
+
+    public void setResetTokenExpiry(LocalDateTime resetTokenExpiry) {
+        this.resetTokenExpiry = resetTokenExpiry;
+    }
+
+    public String getVerificationCode() {
+        return verificationCode;
+    }
+
+    public void setVerificationCode(String verificationCode) {
+        this.verificationCode = verificationCode;
+    }
+
+    public LocalDateTime getVerificationCodeExpiry() {
+        return verificationCodeExpiry;
+    }
+
+    public void setVerificationCodeExpiry(LocalDateTime verificationCodeExpiry) {
+        this.verificationCodeExpiry = verificationCodeExpiry;
+    }
+
 }

@@ -4,6 +4,9 @@ import java.time.LocalDateTime;
 
 import javax.validation.constraints.Email;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,31 +20,45 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
     private String username;
 
     @Email
+    @Column(unique = true)
     private String email;
 
     private String password;
+
+    private boolean isVerified = false;
+
+    private boolean isActive = false;
 
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
 
-    private boolean isVerified = false;
+    private LocalDateTime lastLogin;
 
-    public User() {
-    }
+    private LocalDateTime lastLogout;
 
-    public User(Long id, String username, @Email String email, String password, LocalDateTime createdAt,
-            LocalDateTime updatedAt, boolean isVerified) {
-        this.id = id;
+    private String resetToken;
+
+    private LocalDateTime resetTokenExpiry;
+
+    private String verificationCode;
+
+    public LocalDateTime verificationCodeExpiry;
+
+    // minimum required constructor
+    public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
-        this.password = password;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.isVerified = isVerified;
+        this.password = hashPassword(password);
+    }
+
+    private String hashPassword(String password) {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        return passwordEncoder.encode(password);
     }
 
     public Long getId() {
@@ -76,6 +93,22 @@ public class User {
         this.password = password;
     }
 
+    public boolean isVerified() {
+        return isVerified;
+    }
+
+    public void setVerified(boolean isVerified) {
+        this.isVerified = isVerified;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean isActive) {
+        this.isActive = isActive;
+    }
+
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -92,11 +125,52 @@ public class User {
         this.updatedAt = updatedAt;
     }
 
-    public boolean isVerified() {
-        return isVerified;
+    public LocalDateTime getLastLogin() {
+        return lastLogin;
     }
 
-    public void setVerified(boolean isVerified) {
-        this.isVerified = isVerified;
+    public void setLastLogin(LocalDateTime lastLogin) {
+        this.lastLogin = lastLogin;
     }
+
+    public LocalDateTime getLastLogout() {
+        return lastLogout;
+    }
+
+    public void setLastLogout(LocalDateTime lastLogout) {
+        this.lastLogout = lastLogout;
+    }
+
+    public String getResetToken() {
+        return resetToken;
+    }
+
+    public void setResetToken(String resetToken) {
+        this.resetToken = resetToken;
+    }
+
+    public LocalDateTime getResetTokenExpiry() {
+        return resetTokenExpiry;
+    }
+
+    public void setResetTokenExpiry(LocalDateTime resetTokenExpiry) {
+        this.resetTokenExpiry = resetTokenExpiry;
+    }
+
+    public String getVerificationCode() {
+        return verificationCode;
+    }
+
+    public void setVerificationCode(String verificationCode) {
+        this.verificationCode = verificationCode;
+    }
+
+    public LocalDateTime getVerificationCodeExpiry() {
+        return verificationCodeExpiry;
+    }
+
+    public void setVerificationCodeExpiry(LocalDateTime verificationCodeExpiry) {
+        this.verificationCodeExpiry = verificationCodeExpiry;
+    }
+
 }
