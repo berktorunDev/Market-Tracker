@@ -9,7 +9,7 @@ out/
 
 # Spring Boot
 #/application*.yml
-#/application*.properties
+application*.properties
 
 # IDE
 .idea/
