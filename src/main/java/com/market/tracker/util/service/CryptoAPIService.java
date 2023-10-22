@@ -1,4 +1,4 @@
-package com.market.tracker.service;
+package com.market.tracker.util.service;
 
 import java.util.ArrayList;
 import java.util.List;

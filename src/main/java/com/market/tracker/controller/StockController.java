@@ -17,7 +17,7 @@ import com.market.tracker.service.StockService;
 import com.market.tracker.util.responseHandler.ResponseHandler;
 
 @RestController
-@RequestMapping("/stocks")
+@RequestMapping("/stock")
 public class StockController {
 
     private final StockService stockService;

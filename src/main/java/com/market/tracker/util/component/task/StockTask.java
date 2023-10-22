@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.market.tracker.model.Stock;
-import com.market.tracker.service.StockAPIService;
 import com.market.tracker.service.StockService;
+import com.market.tracker.util.service.StockAPIService;
 
 @Component
 public class StockTask {

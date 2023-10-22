@@ -17,7 +17,7 @@ import com.market.tracker.service.CryptoService;
 import com.market.tracker.util.responseHandler.ResponseHandler;
 
 @RestController
-@RequestMapping("/cryptos")
+@RequestMapping("/crypto")
 public class CryptoController {
 
     private final CryptoService cryptoService;
