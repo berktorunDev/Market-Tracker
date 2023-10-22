@@ -1,18 +1,10 @@
-package com.market.tracker.model;
+package com.market.tracker.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
-public class Stock {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CryptoDTO {
     private Long id;
 
     private String symbol;
-
+    
     private String name;
 
     public Long getId() {
@@ -38,5 +30,4 @@ public class Stock {
     public void setName(String name) {
         this.name = name;
     }
-
 }
