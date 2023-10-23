@@ -1,6 +1,7 @@
 package com.market.tracker.controller;
 
 import java.util.HashMap;
+import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +32,7 @@ public class UserController {
 
     // Endpoint for retrieving a user by their ID.
     @GetMapping("/{userId}")
-    public ResponseEntity<Object> getUser(@PathVariable Long userId) {
+    public ResponseEntity<Object> getUser(@PathVariable UUID userId) {
         // Retrieve the user by their user ID using the UserService.getUser method.
         UserDTO userDTO = userService.getUser(userId);
 
@@ -77,7 +78,7 @@ public class UserController {
 
     // Endpoint for user logout.
     @GetMapping("/logout/{userId}")
-    public ResponseEntity<Object> logoutUser(@PathVariable Long userId) {
+    public ResponseEntity<Object> logoutUser(@PathVariable UUID userId) {
         // Log out the user using the UserService.logout method.
         userService.logout(userId);
         // Return a positive response when the user logs out successfully.
@@ -86,7 +87,7 @@ public class UserController {
 
     // Endpoint for initiating a password reset request.
     @PostMapping("/forgotPassword/{userId}")
-    public ResponseEntity<Object> forgotPassword(@PathVariable Long userId) {
+    public ResponseEntity<Object> forgotPassword(@PathVariable UUID userId) {
         if (userService.forgotPassword(userId)) {
             // Return a positive response when the password reset email is successfully
             // sent.
@@ -111,7 +112,7 @@ public class UserController {
 
     // Endpoint for updating user information.
     @PutMapping("/update/{userId}")
-    public ResponseEntity<Object> updateUser(@PathVariable Long userId, @RequestBody UserRequest userRequest) {
+    public ResponseEntity<Object> updateUser(@PathVariable UUID userId, @RequestBody UserRequest userRequest) {
         // Update user information using the UserService.updateUser method.
         UserDTO updatedUser = userService.updateUser(userId,
                 userRequest.getUsername(),
@@ -128,7 +129,7 @@ public class UserController {
 
     // Endpoint for verifying a user's account using a verification code.
     @PostMapping("/verify/{userId}")
-    public ResponseEntity<Object> verifyUser(@PathVariable Long userId) {
+    public ResponseEntity<Object> verifyUser(@PathVariable UUID userId) {
         if (userService.verifyUser(userId)) {
             // Return a positive response when the verification code email is successfully
             // sent.

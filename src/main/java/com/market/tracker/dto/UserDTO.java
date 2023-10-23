@@ -1,9 +1,10 @@
 package com.market.tracker.dto;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class UserDTO {
-    private Long id;
+    private UUID id;
 
     private String username;
 
@@ -32,7 +33,7 @@ public class UserDTO {
     public UserDTO() {
     }
 
-    public UserDTO(Long id, String username, String email, boolean isVerified, boolean isActive,
+    public UserDTO(UUID id, String username, String email, boolean isVerified, boolean isActive,
             LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime lastLogin, LocalDateTime lastLogout,
             String resetToken, LocalDateTime resetTokenExpiry, String verificationCode,
             LocalDateTime verificationCodeExpiry) {
@@ -51,11 +52,11 @@ public class UserDTO {
         this.verificationCodeExpiry = verificationCodeExpiry;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

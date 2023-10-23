@@ -1,7 +1,9 @@
 package com.market.tracker.dto;
 
+import java.util.UUID;
+
 public class CryptoDTO {
-    private Long id;
+    private UUID id;
 
     private String symbol;
 
@@ -9,11 +11,11 @@ public class CryptoDTO {
 
     private final String prefix = "CRYPTO:";
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

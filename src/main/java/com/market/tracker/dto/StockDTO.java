@@ -1,17 +1,19 @@
 package com.market.tracker.dto;
 
+import java.util.UUID;
+
 public class StockDTO {
-    private Long id;
+    private UUID id;
 
     private String symbol;
 
     private String name;
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

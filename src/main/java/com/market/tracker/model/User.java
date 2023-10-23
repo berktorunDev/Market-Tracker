@@ -1,6 +1,7 @@
 package com.market.tracker.model;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import javax.validation.constraints.Email;
 
@@ -17,8 +18,8 @@ import jakarta.persistence.Table;
 @Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
     @Column(unique = true)
     private String username;
@@ -64,11 +65,11 @@ public class User {
         return passwordEncoder.encode(password);
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

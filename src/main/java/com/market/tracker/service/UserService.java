@@ -1,6 +1,7 @@
 package com.market.tracker.service;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -45,7 +46,7 @@ public class UserService {
      * @param userId The user's unique identifier.
      * @return The user's details as a UserDTO if found; otherwise, null.
      */
-    public UserDTO getUser(Long userId) {
+    public UserDTO getUser(UUID userId) {
         User user = userRepository.findById(userId).orElse(null);
 
         if (user != null) {
@@ -102,7 +103,7 @@ public class UserService {
      *
      * @param userId User's unique identifier.
      */
-    public void logout(Long userId) {
+    public void logout(UUID userId) {
         User user = userRepository.findById(userId).orElse(null);
         if (user != null) {
             user.setActive(false);
@@ -121,7 +122,7 @@ public class UserService {
      * @return True if the password reset process is initiated successfully;
      *         otherwise, false.
      */
-    public boolean forgotPassword(Long userId) {
+    public boolean forgotPassword(UUID userId) {
         User user = userRepository.findById(userId).orElse(null);
 
         if (user != null) {
@@ -172,7 +173,7 @@ public class UserService {
      * @return The updated user's details as a UserDTO if the update is successful;
      *         otherwise, null.
      */
-    public UserDTO updateUser(Long userId, String username, String email, String password) {
+    public UserDTO updateUser(UUID userId, String username, String email, String password) {
         User user = userRepository.findById(userId).orElse(null);
 
         if (user != null) {
@@ -206,7 +207,7 @@ public class UserService {
      * @return True if the user's account is successfully verified; otherwise,
      *         false.
      */
-    public boolean verifyUser(Long userId) {
+    public boolean verifyUser(UUID userId) {
         User user = userRepository.findById(userId).orElse(null);
 
         if (user != null) {

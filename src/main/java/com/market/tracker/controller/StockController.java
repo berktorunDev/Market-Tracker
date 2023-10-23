@@ -1,6 +1,7 @@
 package com.market.tracker.controller;
 
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -50,7 +51,7 @@ public class StockController {
 
     // Endpoint to retrieve a stock by its ID
     @GetMapping("/{id}")
-    public ResponseEntity<Object> getStockById(@PathVariable Long id) {
+    public ResponseEntity<Object> getStockById(@PathVariable UUID id) {
         // Call the StockService to fetch a stock by its ID
         Optional<StockDTO> stock = stockService.getStockById(id);
 

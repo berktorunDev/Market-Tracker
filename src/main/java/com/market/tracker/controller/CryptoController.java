@@ -1,6 +1,7 @@
 package com.market.tracker.controller;
 
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -50,7 +51,7 @@ public class CryptoController {
 
     // Endpoint to retrieve a cryptocurrency by its ID
     @GetMapping("/{id}")
-    public ResponseEntity<Object> getCryptoById(@PathVariable Long id) {
+    public ResponseEntity<Object> getCryptoById(@PathVariable UUID id) {
         // Call the CryptoService to fetch a cryptocurrency by its ID
         Optional<CryptoDTO> crypto = cryptoService.getCryptoById(id);
 

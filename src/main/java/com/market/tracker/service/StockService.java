@@ -5,6 +5,7 @@ import com.market.tracker.model.Stock;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -51,7 +52,7 @@ public class StockService {
      * @return An Optional containing a StockDTO if the asset exists, or an empty
      *         Optional if not found.
      */
-    public Optional<StockDTO> getStockById(Long id) {
+    public Optional<StockDTO> getStockById(UUID id) {
         Optional<Stock> stock = stockRepository.findById(id);
         return stock.map(value -> mapperUtil.convertToDTO(value, StockDTO.class));
     }

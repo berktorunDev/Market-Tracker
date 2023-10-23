@@ -2,6 +2,7 @@ package com.market.tracker.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -50,7 +51,7 @@ public class CryptoService {
      * @return An Optional containing a CryptoDTO if the asset exists, or an empty
      *         Optional if not found.
      */
-    public Optional<CryptoDTO> getCryptoById(Long id) {
+    public Optional<CryptoDTO> getCryptoById(UUID id) {
         Optional<Crypto> crypto = cryptoRepository.findById(id);
         return crypto.map(value -> mapperUtil.convertToDTO(value, CryptoDTO.class));
     }
