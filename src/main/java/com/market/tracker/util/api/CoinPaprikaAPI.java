@@ -1,4 +1,4 @@
-package com.market.tracker.util.service;
+package com.market.tracker.util.api;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,14 +14,14 @@ import org.springframework.web.client.RestTemplate;
 import com.market.tracker.model.Crypto;
 
 @Service
-public class CryptoAPIService {
+public class CoinPaprikaAPI {
 
     private final String cryptoApiUrl;
     private final RestTemplate restTemplate;
 
     // Constructor to initialize CryptoAPIService with the crypto API URL and a
     // RestTemplate
-    public CryptoAPIService(@Value("${crypto.api.url}") String cryptoApiUrl, RestTemplate restTemplate) {
+    public CoinPaprikaAPI(@Value("${crypto.api.url}") String cryptoApiUrl, RestTemplate restTemplate) {
         this.cryptoApiUrl = cryptoApiUrl;
         this.restTemplate = restTemplate;
     }

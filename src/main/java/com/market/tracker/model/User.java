@@ -49,7 +49,10 @@ public class User {
 
     public LocalDateTime verificationCodeExpiry;
 
-    // minimum required constructor
+    public User() {
+
+    }
+
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;

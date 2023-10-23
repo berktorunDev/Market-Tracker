@@ -2,6 +2,7 @@ package com.market.tracker.request;
 
 public class ChangePasswordRequest {
     private String resetToken;
+    
     private String newPassword;
 
     public String getResetToken() {

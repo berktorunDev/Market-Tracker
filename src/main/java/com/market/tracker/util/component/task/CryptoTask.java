@@ -6,17 +6,17 @@ import org.springframework.stereotype.Component;
 
 import com.market.tracker.model.Crypto;
 import com.market.tracker.service.CryptoService;
-import com.market.tracker.util.service.CryptoAPIService;
+import com.market.tracker.util.api.CoinPaprikaAPI;
 
 @Component
 public class CryptoTask {
 
     // Inject the required services
     private final CryptoService cryptoService;
-    private final CryptoAPIService cryptoAPIService;
+    private final CoinPaprikaAPI cryptoAPIService;
 
     // Constructor to inject the necessary dependencies
-    public CryptoTask(CryptoService cryptoService, CryptoAPIService cryptoAPIService) {
+    public CryptoTask(CryptoService cryptoService, CoinPaprikaAPI cryptoAPIService) {
         this.cryptoService = cryptoService;
         this.cryptoAPIService = cryptoAPIService;
     }

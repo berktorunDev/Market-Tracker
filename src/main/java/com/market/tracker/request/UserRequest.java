@@ -2,7 +2,9 @@ package com.market.tracker.request;
 
 public class UserRequest {
     private String username;
+
     private String email;
+    
     private String password;
 
     public String getUsername() {

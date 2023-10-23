@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.market.tracker.dto.UserDTO;
 import com.market.tracker.request.ChangePasswordRequest;
-import com.market.tracker.request.ForgotPasswordRequest;
 import com.market.tracker.request.LoginRequest;
 import com.market.tracker.request.UserRequest;
 import com.market.tracker.request.VerificationRequest;
@@ -86,9 +85,9 @@ public class UserController {
     }
 
     // Endpoint for initiating a password reset request.
-    @PostMapping("/forgotPassword")
-    public ResponseEntity<Object> forgotPassword(@RequestBody ForgotPasswordRequest forgotPasswordRequest) {
-        if (userService.forgotPassword(forgotPasswordRequest.getEmail())) {
+    @PostMapping("/forgotPassword/{userId}")
+    public ResponseEntity<Object> forgotPassword(@PathVariable Long userId) {
+        if (userService.forgotPassword(userId)) {
             // Return a positive response when the password reset email is successfully
             // sent.
             return ResponseHandler.successResponse(HttpStatus.OK, "Password reset email sent", new HashMap<>());
@@ -128,9 +127,9 @@ public class UserController {
     }
 
     // Endpoint for verifying a user's account using a verification code.
-    @PostMapping("/verify")
-    public ResponseEntity<Object> verifyUser(@RequestBody VerificationRequest verificationRequest) {
-        if (userService.verifyUser(verificationRequest.getEmail())) {
+    @PostMapping("/verify/{userId}")
+    public ResponseEntity<Object> verifyUser(@PathVariable Long userId) {
+        if (userService.verifyUser(userId)) {
             // Return a positive response when the verification code email is successfully
             // sent.
             return ResponseHandler.successResponse(HttpStatus.OK, "Verification code sent successfully",

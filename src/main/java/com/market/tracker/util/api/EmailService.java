@@ -1,4 +1,4 @@
-package com.market.tracker.util.service;
+package com.market.tracker.util.api;
 
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;

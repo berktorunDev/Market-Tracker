@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import com.market.tracker.dto.UserDTO;
 import com.market.tracker.model.User;
 import com.market.tracker.repository.UserRepository;
+import com.market.tracker.util.api.EmailService;
 import com.market.tracker.util.codeGeneration.CodeGenerator;
 import com.market.tracker.util.mapper.MapperUtil;
-import com.market.tracker.util.service.EmailService;
 
 @Service
 public class UserService {
@@ -121,8 +121,8 @@ public class UserService {
      * @return True if the password reset process is initiated successfully;
      *         otherwise, false.
      */
-    public boolean forgotPassword(String email) {
-        User user = userRepository.findByEmail(email);
+    public boolean forgotPassword(Long userId) {
+        User user = userRepository.findById(userId).orElse(null);
 
         if (user != null) {
             String resetToken = codeGenerator.generateCode();
@@ -206,8 +206,8 @@ public class UserService {
      * @return True if the user's account is successfully verified; otherwise,
      *         false.
      */
-    public boolean verifyUser(String email) {
-        User user = userRepository.findByEmail(email);
+    public boolean verifyUser(Long userId) {
+        User user = userRepository.findById(userId).orElse(null);
 
         if (user != null) {
             String verificationCode = codeGenerator.generateCode();

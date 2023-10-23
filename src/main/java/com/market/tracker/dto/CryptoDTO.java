@@ -4,8 +4,10 @@ public class CryptoDTO {
     private Long id;
 
     private String symbol;
-    
+
     private String name;
+
+    private final String prefix = "CRYPTO:";
 
     public Long getId() {
         return id;
@@ -29,5 +31,9 @@ public class CryptoDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPrefix() {
+        return prefix;
     }
 }

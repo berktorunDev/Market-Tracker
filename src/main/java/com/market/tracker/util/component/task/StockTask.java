@@ -7,17 +7,17 @@ import org.springframework.stereotype.Component;
 
 import com.market.tracker.model.Stock;
 import com.market.tracker.service.StockService;
-import com.market.tracker.util.service.StockAPIService;
+import com.market.tracker.util.api.AlphavantageAPI;
 
 @Component
 public class StockTask {
 
     // Inject the necessary services
-    private final StockAPIService stockAPIService;
+    private final AlphavantageAPI stockAPIService;
     private final StockService stockService;
 
     // Constructor to inject the required dependencies
-    public StockTask(StockAPIService stockAPIService, StockService stockService) {
+    public StockTask(AlphavantageAPI stockAPIService, StockService stockService) {
         this.stockAPIService = stockAPIService;
         this.stockService = stockService;
     }
