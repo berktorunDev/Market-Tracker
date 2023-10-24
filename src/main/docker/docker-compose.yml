@@ -1,0 +1,26 @@
+version: '3'
+services:
+  app:
+    image: 'market_tracker:latest'
+    ports:
+      - "8080:8080"
+    build:
+      context: .
+    container_name: market_tracker
+    depends_on:
+      - postgres
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/market_tracker
+      - SPRING_DATASOURCE_USERNAME=username
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  postgres:
+    container_name: postgres-container
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: market_tracker
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
