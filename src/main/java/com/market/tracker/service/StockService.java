@@ -1,7 +1,7 @@
 package com.market.tracker.service;
 
-import com.market.tracker.dto.StockDTO;
 import com.market.tracker.model.Stock;
+import com.market.tracker.model.dto.StockDTO;
 
 import java.util.List;
 import java.util.Optional;

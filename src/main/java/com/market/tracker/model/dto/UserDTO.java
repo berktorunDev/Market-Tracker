@@ -1,4 +1,4 @@
-package com.market.tracker.dto;
+package com.market.tracker.model.dto;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

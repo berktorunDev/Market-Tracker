@@ -8,10 +8,10 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.market.tracker.dto.FeedItemDTO;
-import com.market.tracker.dto.NewsAndSentimentDTO;
-import com.market.tracker.dto.TickerSentimentDTO;
-import com.market.tracker.dto.TopicDTO;
+import com.market.tracker.model.dto.FeedItemDTO;
+import com.market.tracker.model.dto.NewsAndSentimentDTO;
+import com.market.tracker.model.dto.TickerSentimentDTO;
+import com.market.tracker.model.dto.TopicDTO;
 
 /**
  * Custom JSON deserializer for converting JSON data into a NewsAndSentimentDTO

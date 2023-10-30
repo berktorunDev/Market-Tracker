@@ -1,4 +1,4 @@
-package com.market.tracker.request;
+package com.market.tracker.model.request;
 
 public class NewsAndSentimentRequest {
     private String tickers;

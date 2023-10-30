@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.market.tracker.dto.UserDTO;
-import com.market.tracker.request.ChangePasswordRequest;
-import com.market.tracker.request.LoginRequest;
-import com.market.tracker.request.UserRequest;
-import com.market.tracker.request.VerificationRequest;
+import com.market.tracker.model.dto.UserDTO;
+import com.market.tracker.model.request.ChangePasswordRequest;
+import com.market.tracker.model.request.LoginRequest;
+import com.market.tracker.model.request.UserRequest;
+import com.market.tracker.model.request.VerificationRequest;
 import com.market.tracker.service.UserService;
 import com.market.tracker.util.responseHandler.ResponseHandler;
 

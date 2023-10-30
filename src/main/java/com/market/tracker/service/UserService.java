@@ -6,8 +6,8 @@ import java.util.UUID;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.market.tracker.dto.UserDTO;
 import com.market.tracker.model.User;
+import com.market.tracker.model.dto.UserDTO;
 import com.market.tracker.repository.UserRepository;
 import com.market.tracker.util.api.EmailService;
 import com.market.tracker.util.codeGeneration.CodeGenerator;

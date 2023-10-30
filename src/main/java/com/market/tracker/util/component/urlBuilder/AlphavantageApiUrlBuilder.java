@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.market.tracker.enums.AlphavantageApiFunctionType;
-import com.market.tracker.request.NewsAndSentimentRequest;
+import com.market.tracker.model.enums.AlphavantageApiFunctionType;
+import com.market.tracker.model.request.NewsAndSentimentRequest;
 
 /**
  * The AlphavantageApiUrlBuilder class is responsible for building the URL for

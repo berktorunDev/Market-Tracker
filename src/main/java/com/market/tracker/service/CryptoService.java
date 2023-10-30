@@ -8,8 +8,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.market.tracker.dto.CryptoDTO;
 import com.market.tracker.model.Crypto;
+import com.market.tracker.model.dto.CryptoDTO;
 import com.market.tracker.repository.CryptoRepository;
 import com.market.tracker.util.mapper.MapperUtil;
 

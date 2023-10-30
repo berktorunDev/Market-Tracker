@@ -6,7 +6,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.market.tracker.dto.GlobalQuoteDTO;
+import com.market.tracker.model.dto.GlobalQuoteDTO;
 
 /**
  * Custom JSON deserializer for converting JSON data into a GlobalQuoteDTO

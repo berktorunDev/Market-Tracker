@@ -1,4 +1,4 @@
-package com.market.tracker.dto;
+package com.market.tracker.model.dto;
 
 public class AssetInfoDTO {
     private String ticker;

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.market.tracker.dto.CryptoDTO;
+import com.market.tracker.model.dto.CryptoDTO;
 import com.market.tracker.service.CryptoService;
 import com.market.tracker.util.responseHandler.ResponseHandler;
 

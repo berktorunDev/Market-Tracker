@@ -1,4 +1,4 @@
-package com.market.tracker.dto;
+package com.market.tracker.model.dto;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.market.tracker.util.serializerDeserializer.GlobalQuoteDTODeserializer;

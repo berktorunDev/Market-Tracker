@@ -1,15 +1,13 @@
-package com.market.tracker.dto;
+package com.market.tracker.model.dto;
 
 import java.util.UUID;
 
-public class CryptoDTO {
+public class StockDTO {
     private UUID id;
 
     private String symbol;
 
     private String name;
-
-    private final String prefix = "CRYPTO:";
 
     public UUID getId() {
         return id;
@@ -35,7 +33,4 @@ public class CryptoDTO {
         this.name = name;
     }
 
-    public String getPrefix() {
-        return prefix;
-    }
 }

@@ -14,12 +14,12 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.market.tracker.dto.GainersAndLosersDTO;
-import com.market.tracker.dto.GlobalQuoteDTO;
-import com.market.tracker.dto.NewsAndSentimentDTO;
-import com.market.tracker.enums.AlphavantageApiFunctionType;
 import com.market.tracker.model.Stock;
-import com.market.tracker.request.NewsAndSentimentRequest;
+import com.market.tracker.model.dto.GainersAndLosersDTO;
+import com.market.tracker.model.dto.GlobalQuoteDTO;
+import com.market.tracker.model.dto.NewsAndSentimentDTO;
+import com.market.tracker.model.enums.AlphavantageApiFunctionType;
+import com.market.tracker.model.request.NewsAndSentimentRequest;
 import com.market.tracker.util.component.urlBuilder.AlphavantageApiUrlBuilder;
 
 @Service

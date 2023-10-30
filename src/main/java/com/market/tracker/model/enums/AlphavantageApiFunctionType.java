@@ -1,4 +1,4 @@
-package com.market.tracker.enums;
+package com.market.tracker.model.enums;
 
 public enum AlphavantageApiFunctionType {
     GLOBAL_QUOTE,
